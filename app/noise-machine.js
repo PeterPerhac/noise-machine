@@ -2,7 +2,7 @@ var noiseMachine = {
     noises : {
         laser: new Howl({ src: ['sounds/noise.ogg','sounds/noise.wav'] }),
         drum1: new Howl({ src: ['sounds/drum1.ogg','sounds/drum1.wav'] }),
-        drum2: new Howl({ src: ['sounds/drum1.ogg','sounds/drum2.wav'] })
+        drum2: new Howl({ src: ['sounds/drum2.ogg','sounds/drum2.wav'] })
     },
     playNoise: function(noise){
         var noise =  noiseMachine.noises[noise]
@@ -24,7 +24,9 @@ var noiseMachine = {
         return false;
     },
     init : function(){
-        document.getElementById('drum-machine').onkeydown = this.onKeyDown
+        var input = document.getElementById('drum-machine');
+        input.onkeydown = this.onKeyDown;
+        input.focus();
     }
 }
 
