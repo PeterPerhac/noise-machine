@@ -23,6 +23,8 @@ var noiseMachine = {
                 break;
             case '2': noiseToPlay = 'drum2';
                 break;
+            case '3': noiseToPlay = 'loop';
+                break;
         }
         noiseMachine.playNoise(noiseToPlay);
         if( e.preventDefault) e.preventDefault();
