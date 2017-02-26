@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="initial-scale=1">
-	<title>Noise Machine</title>
-       <!-- <link rel="stylesheet" href="css/vanilla.css"> -->
-</head>
-<body>
-	Content of the document......
-    <button onclick="noiseMachine.playNoise()">Click me to make some noise!</button>
-	<footer>
+        <title>Noise Machine</title>
+        <!-- <link rel="stylesheet" href="css/vanilla.css"> -->
+    </head>
+    <body>
+        <h1>Press buttons</h1>
+        <button onclick="noiseMachine.playNoise('laser')">Click me to make some noise!</button>
+        <p>Type numbers here to make music</p>
+        <form action="#">
+            <input id="drum-machine" value="">
+        </form>
+        <footer>
             <section>
-		Footer section (perhaps copyright)
+                Footer section (perhaps copyright)
             </section>
         </footer>
         <script src="app/js/howler.min.js"></script>
         <script src="app/noise-machine.js"></script>
-</body>
+    </body>
 </html>
 
