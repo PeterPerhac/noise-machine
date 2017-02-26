@@ -1,12 +1,13 @@
+function loadSfx(soundName){
+    return new Howl({ src: ['sounds/'+soundName+'.mp3', 'sounds/'+soundName+'.ogg','sounds/'+soundName+'.wav']});
+}
+
 var noiseMachine = {
-    load: function(soundName){
-        return new Howl({ src: ['sounds/'+soundName+'.ogg','sounds/'+soundName+'.wav']});
-    },
     noises : {
-        laser: this.load('laser'),
-        drum1: this.load('drum1'),
-        drum2: this.load('drum2'),
-        loop:  this.load('loop')
+        laser: this.loadSfx('laser'),
+        drum1: this.loadSfx('drum1'),
+        drum2: this.loadSfx('drum2'),
+        loop:  this.loadSfx('loop')
     },
     playNoise: function(noise){
         var noise =  noiseMachine.noises[noise]
