@@ -1,12 +1,19 @@
 function loadSfx(soundName){
     return new Howl({ src: ['sounds/'+soundName+'.mp3', 'sounds/'+soundName+'.ogg','sounds/'+soundName+'.wav']});
 }
-
 var noiseMachine = {
     noises : {
         laser: this.loadSfx('laser'),
         drum1: this.loadSfx('drum1'),
         drum2: this.loadSfx('drum2'),
+        drum2: this.loadSfx('drum2'),
+        ding: this.loadSfx('ding'),
+        dong: this.loadSfx('dong'),
+        doorbell: this.loadSfx('doorbell'),
+        mobile: this.loadSfx('mobile'),
+        scratch: this.loadSfx('scratch'),
+        shotgun1: this.loadSfx('shotgun-reload'),
+        shotgun2: this.loadSfx('shotgun-fire'),
         loop:  this.loadSfx('loop')
     },
     playNoise: function(noise){
@@ -24,6 +31,20 @@ var noiseMachine = {
             case '2': noiseToPlay = 'drum2';
                 break;
             case '3': noiseToPlay = 'loop';
+                break;
+            case '4': noiseToPlay = 'ding';
+                break;
+            case '5': noiseToPlay = 'dong';
+                break;
+            case '6': noiseToPlay = 'doorbell';
+                break;
+            case '7': noiseToPlay = 'mobile';
+                break;
+            case '8': noiseToPlay = 'scratch';
+                break;
+            case 'q': noiseToPlay = 'shotgun1';
+                break;
+            case 'w': noiseToPlay = 'shotgun2';
                 break;
         }
         noiseMachine.playNoise(noiseToPlay);
