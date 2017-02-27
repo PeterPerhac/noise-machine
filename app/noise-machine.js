@@ -42,9 +42,9 @@ var noiseMachine = {
                 break;
             case '8': noiseToPlay = 'scratch';
                 break;
-            case 'q': noiseToPlay = 'shotgun1';
+            case 'Q': noiseToPlay = 'shotgun1';
                 break;
-            case 'w': noiseToPlay = 'shotgun2';
+            case 'W': noiseToPlay = 'shotgun2';
                 break;
         }
         noiseMachine.playNoise(noiseToPlay);
