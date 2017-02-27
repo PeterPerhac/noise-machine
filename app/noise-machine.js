@@ -1,5 +1,5 @@
 function loadSfx(soundName){
-    return new Howl({ src: ['sounds/'+soundName+'.mp3', 'sounds/'+soundName+'.ogg','sounds/'+soundName+'.wav']});
+    return new Howl({ src: ['sounds/'+soundName+'.mp3', 'sounds/'+soundName+'.wav']});
 }
 var noiseMachine = {
     noises : {
@@ -15,9 +15,9 @@ var noiseMachine = {
         'q': loadSfx('shotgun-reload'),
         'w': loadSfx('shotgun-fire')
     },
-    playNoise: function(noise){ noise &&  noise.play(); },
+    playNoise: function(noise){ noise &&  noise.play() },
     keyHandler: function (e) {
-        var letterPressed = String.fromCharCode(e.keyCode)
+        var letterPressed = String.fromCharCode(e.keyCode);
         noiseMachine.playNoise(noiseMachine.noises[letterPressed]);
         if( e.preventDefault) e.preventDefault();
         return false;
