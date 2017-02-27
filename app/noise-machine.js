@@ -3,27 +3,22 @@ function loadSfx(soundName){
 }
 var noiseMachine = {
     noises : {
-        laser: loadSfx('laser'),
-        drum1: loadSfx('drum1'),
-        drum2: loadSfx('drum2'),
-        drum2: loadSfx('drum2'),
-        ding: loadSfx('ding'),
-        dong: loadSfx('dong'),
-        doorbell: loadSfx('doorbell'),
-        mobile: loadSfx('mobile'),
-        scratch: loadSfx('scratch'),
-        shotgun1: loadSfx('shotgun-reload'),
-        shotgun2: loadSfx('shotgun-fire'),
-        loop: loadSfx('loop')
+        '0': loadSfx('laser'),
+        '1': loadSfx('drum1'),
+        '2': loadSfx('drum2'),
+        '3': loadSfx('loop'),
+        '4': loadSfx('ding'),
+        '5': loadSfx('dong'),
+        '6': loadSfx('doorbell'),
+        '7': loadSfx('mobile'),
+        '8': loadSfx('scratch'),
+        'q': loadSfx('shotgun-reload'),
+        'w': loadSfx('shotgun-fire')
     },
-    noiseMappings : { '0' : 'laser', '1' : 'drum1', '2' : 'drum2', '3' : 'loop', '4' : 'ding', '5' : 'dong', '6' : 'doorbell', '7' : 'mobile', '8' : 'scratch', 'q' : 'shotgun1', 'w' : 'shotgun2' },
-    playNoise: function(noise){
-        var noise =  noiseMachine.noises[noise]
-        if (noise) noise.play();
-    },
+    playNoise: function(noise){ noise &&  noise.play(); },
     keyHandler: function (e) {
         var letterPressed = String.fromCharCode(e.keyCode)
-        noiseMachine.playNoise(noiseMachine.noiseMappings[letterPressed]);
+        noiseMachine.playNoise(noiseMachine.noises[letterPressed]);
         if( e.preventDefault) e.preventDefault();
         return false;
     },
